@@ -30,7 +30,7 @@ jobs:
     - name: decode environment secrets
       env:
           api_key : ${{ secrets.MONGODB_API_KEY }}
-      run: echo var api_key = $api_key > config.js
+      run: echo -e "const api_key = 'api-token';\n\nexport default api_key;" > config.js
           
   # Single deploy job since we're just deploying
   deploy:
