@@ -29,10 +29,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: set up configuration file
       env:
-          api_key : ${{ secrets.MONGODB_API_KEY }}
+          api_key: ${{ secrets.MONGODB_API_KEY }}
       run: |
          touch config.js
-         echo api_keyL=${{ secrets.api_key }} >> config.js
+         echo api_key = env.api_key >> config.js
           
   # Single deploy job since we're just deploying
   deploy:
